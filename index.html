@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="games">
+        <div class="game">
+          <div class="container">
+            <!-- Heading -->
+            <div class="game__heading">
+              <div class="game__title">
+                <h1 class="heading-2">Rock</h1>
+                <h1 class="heading-2">Paper</h1>
+                <h1 class="heading-2">Scissors</h1>
+              </div>
+              <div class="game__score">
+                <small class="game__score-text">Score</small>
+                <div class="game__score-value">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="container-2">
+            <div class="game__showcase">
+              <div class="game__position-1">
+                <div class="game__img-border-paper" id="paper">
+                  <div class="game__img-container" id="paper">
+                    <img
+                      src="/images/icon-paper.svg"
+                      alt="paper"
+                      class="game__hand"
+                    />
+                  </div>
+                </div>
+                <div class="game__img-border-scissors" id="scissors">
+                  <div class="game__img-container" id="scissors">
+                    <img
+                      src="/images/icon-scissors.svg"
+                      alt="scissors"
+                      class="game__hand"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="game__position-2">
+                <div class="game__img-border-rock" id="rock">
+                  <div class="game__img-container" id="rock">
+                    <img
+                      src="/images/icon-rock.svg"
+                      alt="rock"
+                      class="game__hand"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="game__line-1 line"></div>
+            <div class="game__line-2 line"></div>
+            <div class="game__line-3 line"></div>
+          </div>
+
+          <div class="game__rules">
+            <button class="btn game__rules-btn">Rules</button>
+          </div>
+        </div>
+
+        <div class="game__battle">
+          <div class="game__picked"></div>
+        </div>
+      </div>
+    </main>
+    <div class="overlay hidden"></div>
+    <div class="modal hidden">
+      <div class="modal__heading">
+        <h2 class="modal__title">Rules</h2>
+        <button class="modal__btn">X</button>
+      </div>
+      <img src="/images/image-rules.svg" alt="Rules" class="modal__img" />
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

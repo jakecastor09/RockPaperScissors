@@ -1,0 +1,244 @@
+.games {
+  background-image: $color-bg-gradient;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.game {
+  //Heading
+  padding: 0 2rem;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    border: 0.5rem solid $color-header-outline;
+    border-radius: 2rem;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+  &__score {
+    background-color: $color-white;
+    text-align: center;
+    width: 15%;
+    border-radius: 1rem;
+    padding-top: 1rem;
+  }
+  &__score-text {
+    color: $color-score-text;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+  }
+  &__score-value {
+    font-size: 8em;
+    font-weight: 600;
+  }
+
+  //Showcase
+  &__showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 8rem;
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 20%; //8px
+    }
+    @media only screen and (max-width: $bp-small-1) {
+      margin-top: 50%;
+    }
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 60%;
+    }
+    // @media only screen and (max-width: $bp-small) {
+    //   margin-top: 20rem;
+    // }
+  }
+  &__position-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__position-2 {
+    display: flex;
+    justify-content: center;
+  }
+  &__img-border-paper,
+  &__img-border-scissors,
+  &__img-border-rock,
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    z-index: 3;
+    position: relative;
+  }
+  &__img-border-paper,
+  &__img-border-scissors,
+  &__img-border-rock {
+    width: 30rem;
+    height: 30rem;
+  }
+  &__img-border-paper {
+    background-image: $color-paper-gradient;
+  }
+  &__img-border-scissors {
+    background-image: $color-scissors-gradient;
+  }
+  &__img-border-rock {
+    background-image: $color-rock-gradient;
+  }
+  &__img-container {
+    background-color: $color-white;
+    width: 24rem;
+    height: 24rem;
+
+    padding: 4rem;
+  }
+
+  &__hand {
+    width: 85%;
+    height: auto;
+  }
+
+  //Triangle
+  &__line {
+    &-1,
+    &-2,
+    &-3 {
+      border: 1rem solid rgba(#000, $alpha: 0.3);
+      height: 30rem;
+    }
+    &-1 {
+      position: absolute;
+      top: 25rem;
+      left: 23rem;
+      transform: rotate(140deg);
+    }
+    &-2 {
+      position: absolute;
+      top: 25rem;
+      right: 24rem;
+      transform: rotate(40deg);
+    }
+    &-3 {
+      position: absolute;
+      top: 0rem;
+      left: 40rem;
+
+      transform: rotate(90deg);
+    }
+  }
+  //Button
+  &__rules {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  //Battle
+  &__battle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    width: 80rem;
+    padding: 0 1rem;
+  }
+  &__picked {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: 55em) {
+      padding: 0 5rem;
+    }
+    @media only screen and (max-width: 49.375em) {
+      padding: 0 10rem;
+      grid-gap: 2rem;
+    }
+  }
+  &__user-picked {
+    justify-self: flex-start;
+  }
+
+  &__shadow {
+    background-color: rgba(#000, $alpha: 0.2);
+    width: 22rem;
+    height: 22rem;
+    border-radius: 100%;
+    position: absolute;
+    top: 12rem;
+    right: 4rem;
+    @media only screen and (max-width: 55em) {
+      right: 8rem;
+    }
+    @media only screen and (max-width: 54.75em) {
+      right: 11rem;
+    }
+  }
+  ///Message
+  &__message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and (max-width: 55em) {
+      position: absolute;
+      bottom: 0;
+      top: 130%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+    }
+  }
+  &__message-btn {
+    color: $color-dark-text;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 2rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0 1rem 1rem 1rem rgba(#000, $alpha: 0.1);
+    &:hover {
+      opacity: 0.7;
+    }
+    @media only screen and (max-width: 55em) {
+      font-size: 2.5rem;
+    }
+  }
+}
+// Modal
+.modal {
+  background-color: $color-white;
+  width: 60rem;
+  padding: 3rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem 2rem rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
+  z-index: 10;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+  }
+  &__title {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: $color-dark-text;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}
